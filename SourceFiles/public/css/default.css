@@ -1,0 +1,88 @@
+#header {
+	background-image: url("../images/schoolbus.jpg");
+	background-size: 100% 100%;
+	padding: 180px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#content {
+	background: #fff;
+	padding: 100px;
+}
+
+h1{
+    text-align:center;
+    list-style-type: none;
+    margin-bottom: 70px;
+    color: #1f7a7a;
+}
+
+ul {
+	text-align:center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+a:link, a:visited {
+    background-color: #9ccccc;
+    color: white;
+    font-size: 25px;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+a:hover, a:active {
+    background-color: #1f7a7a;
+}
+
+#delete:hover, #delete:active {
+background-color: #1f7a7a;
+}
+
+#update:hover, #update:active {
+background-color: #1f7a7a;
+}
+
+#backBtn {
+    background-color: #9ccccc;
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    padding: 7px 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    position: static;
+}
+
+p {
+    font-size: 25px;
+ }
+
+td {
+font-size: 25px;
+
+}
+
+th{
+    font-size: 30px;
+    color: #1f7a7a;
+}
+
+#footer {
+    color: white;
+	background:	#7faf41;
+	padding: 5px;
+	text-align: right;
+}
