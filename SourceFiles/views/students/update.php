@@ -10,7 +10,7 @@
 			<option value="<?php echo $school['id']; ?>" <?php if($data['student']['school_id']==$school['id']) echo 'selected="selected"'; ?>><?php echo $school['name']; ?></option>
 		<?php } ?>
 	</select></p>
-<br>
-<input type="submit" value="Save"/>
+	<input type="submit" value="Save" id="saveBtn" />
 </form>
+<br>
 <button id="backBtn" onclick="location.href='./'">←</button>

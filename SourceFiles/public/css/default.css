@@ -1,9 +1,8 @@
 #header {
-	background-image: url("../images/schoolbus.jpg");
+	background-image: url("../images/schools.jpg");
+    opacity: 0.9;
 	background-size: 100% 100%;
 	padding: 180px;
-	font-size: 30px;
-	font-weight: bold;
 }
 
 #content {
@@ -14,7 +13,7 @@
 h1{
     text-align:center;
     list-style-type: none;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     color: #1f7a7a;
 }
 
@@ -54,7 +53,7 @@ background-color: #1f7a7a;
 background-color: #1f7a7a;
 }
 
-#backBtn {
+#backBtn, #saveBtn {
     background-color: #9ccccc;
     font-size: 20px;
     color: white;
@@ -80,9 +79,17 @@ th{
     color: #1f7a7a;
 }
 
+input, select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
 #footer {
     color: white;
-	background:	#7faf41;
+	background:	#7fad42;
 	padding: 5px;
 	text-align: right;
 }
