@@ -33,7 +33,13 @@ foreach($data['students'] as $student) {
     <input type="text" name="first_name" placeholder="First name:"><br/>
     <input type="text" name="last_name" placeholder="Last name:"><br/>
     <input type="text" name="birthday" placeholder="Date of birth:" onfocus="(this.type='date')" onblur="(this.type='text')" ><br/>
-    <input type="text" name="school_id" placeholder="School:"><br/>
-   <?php  echo '<a href="'.URL.'students/add" name="addStudent" style="margin-left:410px; width:300px;";>Add</a>' ?>
+    <select name="school_id">
+    	<option value="" disabled selected hidden>School:</option>
+    	<?php foreach($data['schools'] as $school) { ?>
+    		<option value="<?php echo $school['id']; ?>" ><?php echo $school['name']; ?> </option>
+    	<?php } ?>
+    </select>
+    <input type="file" name="imageUpload" id="imageUpload" >
+   <input type="submit" value="Add" id="saveBtn" style="margin-left:400px; width:300px;"> 
 </form>
 

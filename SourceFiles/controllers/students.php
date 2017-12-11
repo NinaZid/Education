@@ -23,8 +23,10 @@ class Students extends Controller
 	//Getting the students
 	function index() {
 		$students = $this->db->query('SELECT * FROM students ORDER BY first_name ASC;');
+			$schools = $this->db->query("SELECT * FROM schools");
 
-		$this->view->render('students/index', false, ['students'=>$students]);
+		$this->view->render('students/index', false, ['students'=>$students, 'schools'=>$schools]);
+
 	}
 
 
@@ -64,23 +66,22 @@ class Students extends Controller
 	//Adding new student
 	function add() {
 
+		print_r($_POST);
+
 		$first_name = $this->db->quote($_POST['first_name']);
 		$last_name = $this->db->quote($_POST['last_name']);
 		$birthday = $this->db->quote($_POST['birthday']);
 		$school_id = intval($_POST['school_id']);
 
 
-		$this->db->query("INSERT INTO students ('first_name', 'last_name', 'birthday', 'school_id') VALUES (".$first_name.", 
-			".$last_name.", ".$birthday.", ".$school_id.") ");
-		echo "adddddd";
+		$this->db->query("INSERT INTO students (first_name, last_name, birthday, school_id) VALUES (".$first_name.", ".$last_name.", 
+			".$birthday.", ".$school_id.") ");
+		
+		// print_r($this->db->errorInfo());
+
 
 
 		header('Location: '.URL. 'students');
 
-			
 		}
-
-
- 	// if (isset($_POST['addStudent'])) 
-
 }
