@@ -60,4 +60,27 @@ class Students extends Controller
     	header('Location: '.URL.'students');
 	}
 
+
+	//Adding new student
+	function add() {
+
+		$first_name = $this->db->quote($_POST['first_name']);
+		$last_name = $this->db->quote($_POST['last_name']);
+		$birthday = $this->db->quote($_POST['birthday']);
+		$school_id = intval($_POST['school_id']);
+
+
+		$this->db->query("INSERT INTO students ('first_name', 'last_name', 'birthday', 'school_id') VALUES (".$first_name.", 
+			".$last_name.", ".$birthday.", ".$school_id.") ");
+		echo "adddddd";
+
+
+		header('Location: '.URL. 'students');
+
+			
+		}
+
+
+ 	// if (isset($_POST['addStudent'])) 
+
 }

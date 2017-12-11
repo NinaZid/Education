@@ -1,3 +1,4 @@
+<button id="backBtn" onclick="location.href='./'">←</button>
 <h1>Students in this school:</h1>
 <table style="font-size: 30px; text-align: center; margin: 20px auto;">
 	<tr>
@@ -18,4 +19,4 @@ foreach($data['students'] as $student) {
 }
 ?>
 </table>
-<button id="backBtn" onclick="location.href='./'">←</button>
+

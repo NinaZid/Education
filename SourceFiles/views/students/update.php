@@ -1,3 +1,4 @@
+<button id="backBtn" onclick="location.href='./'">←</button>
 <h1>Student info</h1>
 <form method="post" action="<?php echo URL; ?>students/updatestudent">
 <input type="hidden" name="id" value="<?php echo $data['student']['id'];?>"/>
@@ -13,4 +14,4 @@
 	<input type="submit" value="Save" id="saveBtn" />
 </form>
 <br>
-<button id="backBtn" onclick="location.href='./'">←</button>
+
