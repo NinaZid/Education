@@ -29,7 +29,7 @@ foreach($data['students'] as $student) {
 </form>
 
 <h1>Add new student: </h1>
-<form method="post" action="<?php echo URL; ?>students/add"> 
+<form method="post" action="<?php echo URL; ?>students/add" enctype="multipart/form-data"> 
     <input type="text" name="first_name" placeholder="First name:"><br/>
     <input type="text" name="last_name" placeholder="Last name:"><br/>
     <input type="text" name="birthday" placeholder="Date of birth:" onfocus="(this.type='date')" onblur="(this.type='text')" ><br/>
@@ -39,7 +39,8 @@ foreach($data['students'] as $student) {
     		<option value="<?php echo $school['id']; ?>" ><?php echo $school['name']; ?> </option>
     	<?php } ?>
     </select>
-    <input type="file" name="imageUpload" id="imageUpload" >
-   <input type="submit" value="Add" id="saveBtn" style="margin-left:400px; width:300px;"> 
+    <input type="file" name="fileToUpload" id="fileToUpload" >
+    <br>
+    <input type="submit" value="Add" id="addBtn" style="margin-left:400px; width:350px;"> 
 </form>
 

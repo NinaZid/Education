@@ -66,20 +66,38 @@ class Students extends Controller
 	//Adding new student
 	function add() {
 
-		print_r($_POST);
+		// print_r($_POST);
 
 		$first_name = $this->db->quote($_POST['first_name']);
 		$last_name = $this->db->quote($_POST['last_name']);
 		$birthday = $this->db->quote($_POST['birthday']);
 		$school_id = intval($_POST['school_id']);
+		// $image = $this->db->quote($_POST['image']);
+
+		//inserting image
+		$target_dir = "uploads/";
+		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+		$uploadOk = 1;
 
 
-		$this->db->query("INSERT INTO students (first_name, last_name, birthday, school_id) VALUES (".$first_name.", ".$last_name.", 
-			".$birthday.", ".$school_id.") ");
+		// Check if $uploadOk is set to 0 by an error
+		if ($uploadOk == 0) {
+   			 echo "Sorry, your file was not uploaded.";
+
+		// if everything is ok, try to upload file
+			} else {
+   					 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+       					 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+  						  } else {
+       						 echo "Sorry, there was an error uploading your file.";
+  				  }
+			}
 		
-		// print_r($this->db->errorInfo());
-
-
+			$target_file = $this->db->quote($target_file);
+		$this->db->query("INSERT INTO students (first_name, last_name, birthday, school_id, image) VALUES (".$first_name.", ".$last_name.", ".$birthday.", ".$school_id.", ".$target_file.") ");
+		
+// print_r($_FILES,true);
+// 		print_r($this->db->errorInfo());
 
 		header('Location: '.URL. 'students');
 

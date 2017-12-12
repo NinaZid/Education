@@ -25,4 +25,19 @@ class Schools extends Controller
 
 		$this->view->render('schools/view', false, ['students'=>$students]);
 	}
+
+	//Delete school
+		function deleteSchool() {
+		$school_id = intval($_GET['id']);
+
+
+
+    	$this->db->query("DELETE FROM schools WHERE id = $school_id;");
+    	$this->db->query('DELETE FROM students WHERE school_id = '.$school_id.';');
+
+		// print_r($this->db->errorInfo());
+    
+    	header('Location: '.URL. 'schools');
+	}
+
 }

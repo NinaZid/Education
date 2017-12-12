@@ -10,6 +10,12 @@
 	padding: 100px;
 }
 
+.mySlides {
+    display:none;
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
 h1{
     text-align:center;
     list-style-type: none;
@@ -53,9 +59,9 @@ background-color: #1f7a7a;
 background-color: #1f7a7a;
 }
 
-#backBtn, #saveBtn {
+#backBtn, #saveBtn, #addBtn {
     background-color: #9ccccc;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     display: inline-block;
     padding: 7px 25px;
