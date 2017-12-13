@@ -19,8 +19,8 @@ foreach($data['schools'] as $school) {
 	echo '<td>'.$school['fee'].'$'.'</td>';
 	echo '<td><a href="'.URL.'schools/view?id='.$school['id'].'">More info</td>';
 	echo '<td><a href="'.URL.'schools/deleteSchool?id='.$school['id'].'" class="delete-link" style="font-size:25px; text-align:center;">Delete</a></td>';
-	// echo '<td><a href="'.URL.'schools/update?id='.$school['id'].'" class="update" style="font-size:25x; text-align:center;">
-	// 	Update</a></td>';
+	echo '<td><a href="'.URL.'schools/updateS?id='.$school['id'].'" class="update" style="font-size:25x; text-align:center;">
+		Update</a></td>';
 	echo '<tr>';
 }
 ?>

@@ -30,8 +30,6 @@ class Schools extends Controller
 		function deleteSchool() {
 		$school_id = intval($_GET['id']);
 
-
-
     	$this->db->query("DELETE FROM schools WHERE id = $school_id;");
     	$this->db->query('DELETE FROM students WHERE school_id = '.$school_id.';');
 
@@ -39,5 +37,28 @@ class Schools extends Controller
     
     	header('Location: '.URL. 'schools');
 	}
+
+	//Update school info  
+	function updateS() {
+		$school_id = intval($_GET['id']);
+
+		$school = $this->db->query("SELECT * FROM schools WHERE id=$school_id")->fetch();
+		
+		$this->view->render('schools/update', false, ['school'=>$school]);
+	}
+
+	function updateSchool() {
+		
+		$id = intval($_POST['id']);	
+		$name = $this->db->quote($_POST['name']);
+		$address = $this->db->quote($_POST['address']);
+		$max_students = intval($_POST['max_students']);
+		$fee = intval($_POST['fee']);
+
+		$this->db->query("UPDATE schools SET name=$name, address=$address, max_students=$max_students, fee=$fee WHERE id=$id");
+    	
+    	header('Location: '.URL.'schools');
+	}
+
 
 }
