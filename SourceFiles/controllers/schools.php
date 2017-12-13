@@ -48,7 +48,7 @@ class Schools extends Controller
 	}
 
 	function updateSchool() {
-		
+
 		$id = intval($_POST['id']);	
 		$name = $this->db->quote($_POST['name']);
 		$address = $this->db->quote($_POST['address']);
@@ -60,5 +60,18 @@ class Schools extends Controller
     	header('Location: '.URL.'schools');
 	}
 
+	function addSchool() {
 
+		// print_r($_POST);
+
+		$name = $this->db->quote($_POST['name']);
+		$address = $this->db->quote($_POST['address']);
+		$max_students = intval($_POST['max_students']);
+		$fee = intval($_POST['fee']);
+
+
+	$this->db->query("INSERT INTO schools (name, address, max_students, fee) VALUES (".$name.", ".$address.", ".$max_students.", ".$fee.") ");
+		
+		header('Location: '.URL. 'schools');
+	}
 }
